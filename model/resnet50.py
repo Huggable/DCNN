@@ -244,7 +244,7 @@ def ResNet50(include_top=True, weights='imagenet',
 
             weights_path = os.path.join(ROOT_DIR, "resnet50_weights_tf_dim_ordering_tf_kernels.h5")
         else:
-            weights_path = os.path.join(ROOT_DIR, "resnet50_weights_tf_dim_ordering_tf_kernels_notop.h5")
+            weights_path = 'D:/data/resnet50_weights_tf_dim_ordering_tf_kernels_notop.h5'
 
         model.load_weights(weights_path)
         if K.backend() == 'theano':
