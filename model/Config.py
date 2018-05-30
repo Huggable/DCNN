@@ -10,7 +10,7 @@ class configRes():
     NB_IV3_LAYERS_TO_FREEZE = 170  # 冻结层的数量
     lr = 0.0001
     momentum = 0.9
-    draw = True
+    draw = False
 class configInc():
     train_dir = 'D:/data/5/train'  # 训练集数据
     val_dir = 'D:/data/5/test'  # 验证集数据

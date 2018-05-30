@@ -6,15 +6,16 @@ import glob
 from keras.layers import Dense
 
 from keras.layers import GlobalMaxPooling2D
+
 from keras.models import Model
 from keras import optimizers
+
 from keras.applications import resnet50
 from keras.preprocessing.image import ImageDataGenerator
 from keras.applications.resnet50 import preprocess_input
 import matplotlib.pyplot as plt
 sys.path.append("../")
 from model.Config import configRes
-from model.resnet50 import ResNet50
 
 
 
@@ -104,7 +105,7 @@ def setup_to_finetune(model,freeze_num):
 
 
 
-model = ResNet50(include_top = False,weights='imagenet')
+model = resnet50.ResNet50(include_top = False,weights='imagenet')
 new_model = add_layers(model,nb_classes)
 #new_model.load_weights('../n.h5')
 
