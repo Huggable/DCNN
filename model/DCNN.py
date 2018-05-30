@@ -6,19 +6,19 @@ import glob
 from keras.layers import Dense
 
 from keras.layers import GlobalMaxPooling2D
-
+from keras.utils.vis_utils import plot_model
 from keras.models import Model
-from keras import optimizers
-
-from keras.applications import resnet50
+import pydot_ng as pydot
+#from keras.applications import resnet50
 from keras.preprocessing.image import ImageDataGenerator
 from keras.applications.resnet50 import preprocess_input
 import matplotlib.pyplot as plt
+from model import resnet50
 sys.path.append("../")
+sys.path.append("D:/Graphviz2.38/bin")
 from model.Config import configRes
 
-
-
+print(pydot.find_graphviz())
 
 
 
@@ -106,6 +106,11 @@ def setup_to_finetune(model,freeze_num):
 
 
 model = resnet50.ResNet50(include_top = False,weights='imagenet')
+plot_model(model,
+               to_file='model.png',
+               show_shapes=True,
+               show_layer_names=True,
+               rankdir='TB')
 new_model = add_layers(model,nb_classes)
 #new_model.load_weights('../n.h5')
 

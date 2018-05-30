@@ -3,7 +3,7 @@ class configRes():
     val_dir = 'D:/data/5/test'  # 验证集数据
     resnet_model_save_dir = 'D:/data/resnet.h5'
     nb_classes = 5
-    nb_epoch = 3
+    nb_epoch = 1
     batch_size = 16
     IM_WIDTH, IM_HEIGHT = 224, 224
     FC_SIZE = 1024  # 全连接层的节点个数

@@ -11,7 +11,7 @@ from keras.layers import Dense, GlobalAveragePooling2D
 from keras.preprocessing.image import ImageDataGenerator
 from keras.optimizers import SGD
 sys.path.append("../")
-
+from keras.utils.vis_utils import plot_model
 from model.Config import configInc
 
 
