@@ -4,12 +4,13 @@ import os
 import sys
 import glob
 from keras.layers import Dense
-
+import tensorflow as tf
 from keras.layers import GlobalMaxPooling2D
 from keras.utils.vis_utils import plot_model
 from keras.models import Model
 import pydot_ng as pydot
 #from keras.applications import resnet50
+from keras import optimizers
 from keras.preprocessing.image import ImageDataGenerator
 from keras.applications.resnet50 import preprocess_input
 import matplotlib.pyplot as plt
@@ -106,11 +107,11 @@ def setup_to_finetune(model,freeze_num):
 
 
 model = resnet50.ResNet50(include_top = False,weights='imagenet')
-plot_model(model,
+'''plot_model(model,
                to_file='model.png',
                show_shapes=True,
                show_layer_names=True,
-               rankdir='TB')
+               rankdir='TB')'''
 new_model = add_layers(model,nb_classes)
 #new_model.load_weights('../n.h5')
 
