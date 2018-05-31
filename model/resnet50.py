@@ -30,11 +30,9 @@ from keras.applications.imagenet_utils import decode_predictions
 from keras.applications.imagenet_utils import preprocess_input
 from keras.applications.imagenet_utils import _obtain_input_shape
 from keras.engine.topology import get_source_inputs
-import warnings
 
-warnings.filterwarnings('ignore')
 
-WEIGHTS_PATH = 'https://github.com/fchollet/deep-learning-models/releases/download/v0.2/resnet50_weights_tf_dim_ordering_tf_kernels.h5'
+WEIGHTS_PATH = 'D:/data/resnet50_weights_tf_dim_ordering_tf_kernels_notop.h5'
 WEIGHTS_PATH_NO_TOP = 'https://github.com/fchollet/deep-learning-models/releases/download/v0.2/resnet50_weights_tf_dim_ordering_tf_kernels_notop.h5'
 
 
@@ -244,7 +242,7 @@ def ResNet50(include_top=True, weights='imagenet',
 
             weights_path = os.path.join(ROOT_DIR, "resnet50_weights_tf_dim_ordering_tf_kernels.h5")
         else:
-            weights_path = 'D:/data/resnet50_weights_tf_dim_ordering_tf_kernels_notop.h5'
+            weights_path = WEIGHTS_PATH
 
         model.load_weights(weights_path)
         if K.backend() == 'theano':
